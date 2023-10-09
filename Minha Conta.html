@@ -44,7 +44,8 @@
                             <li><a class="dropdown-item" href="Acervo Mangás.html">Mangás</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="Fale Conosco.html" style="color: black;">Fale Conosco</a>
+                    <li class="nav-item"><a class="nav-link" href="Fale Conosco.html" style="color: black;">Fale
+                            Conosco</a>
                 </ul>
                 <style>
                     /* Adicione este bloco de estilo ao seu código */
@@ -71,8 +72,9 @@
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Fale Conosco</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Dúvidas, Reclamações ou Sugestões são sempre bem vindas</p>
+                <h1 class="display-4 fw-bolder">Informações da Conta</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Atualize ou verifique suas informações sempre que houver
+                    necessidade</p>
             </div>
         </div>
     </header>
@@ -86,38 +88,91 @@
             margin-top: -5%;
             margin-bottom: -5%;
         }
-
+    
         form {
             max-width: 400px;
         }
+    
+        .form-group {
+            margin-bottom: 20px;
+        }
+    
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        button {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: black;
+            color: white;
+            opacity: 1
+        }
     </style>
+    
     <section class="py-5 form-container">
-        <form action="https://api.staticforms.xyz/submit" method="post">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Digite o seu nome" autocomplete="off" style="width: 116%;" required>
+        <form>
+            <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Nome" autocomplete="off" style="width: 200px;" required>
+                </div>
+                <div class="form-group" style="margin-left: 30px; flex: 1;">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" autocomplete="off" style="width: 200px;" required>
+                </div>
             </div>
-            <div class="form-group">
-                <br>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Digite o seu email" autocomplete="off" style="width: 116%;" required>
+            <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                    <label for="birthday">Data de Nascimento</label>
+                    <input type="date" id="birthday" name="birthday" style="width: 200px;" required>
+                </div>
+                <div class="form-group" style="margin-left: 30px; flex: 1;">
+                    <label for="gender">Gênero</label>
+                    <select id="gender" name="gender" style="width: 200px;">
+                        <option value="male">Masculino</option>
+                        <option value="female">Feminino</option>
+                        <option value="other">Outro</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <br>
-                <label for="message">Mensagem</label>
-                <br>
-                <textarea id="message" name="message" cols="60" rows="10" placeholder="Digite a sua mensagem" required></textarea>
+            <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Senha" autocomplete="new-password" style="width: 200px;" required>
+                </div>
+                <div class="form-group" style="margin-left: 30px; flex: 1;">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Senha" autocomplete="new-password" style="width: 200px;">
+                </div>
             </div>
-            <button type="submit">Enviar</button>
-
-            <input type="hidden" name="accessKey" value="96548b11-abfc-448a-967f-632134a4ac25">
-            <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/Obrigado Contato.html">
+            <button type="submit">Atualizar</button>
         </form>
-    </section>
+    </section>    
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Livraria Brasileira 2023 - Rio de Janeiro, RJ - Brasil</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Livraria Brasileira 2023 - Rio de Janeiro, RJ -
+                Brasil</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
