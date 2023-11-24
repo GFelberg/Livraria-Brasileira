@@ -1,0 +1,40 @@
+<!-- templates/books_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Livros</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>Lista de Livros</h1>
+    
+    <button id="btnGetBooks">Obter Livros</button>
+    
+    <ul id="bookList"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $("#btnGetBooks").click(function() {
+                $.ajax({
+                    url: "/get_books/",  // Use a URL correspondente à sua configuração
+                    method: "GET",
+                    success: function(data) {
+                        // Limpa a lista de livros
+                        $("#bookList").empty();
+
+                        // Adiciona os livros à lista
+                        for (let i = 0; i < data.books.length; i++) {
+                            $("#bookList").append(`<li>${data.books[i].id} - ${data.books[i].titulo} - ${data.books[i].autor}</li>`);
+                        }
+                    },
+                    error: function(error) {
+                        console.error("Erro ao obter a lista de livros:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
