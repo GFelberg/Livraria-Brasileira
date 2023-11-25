@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include "acervos/partials/_head.html" %}
+    <body>
+        <!-- Navigation-->
+        {% include "acervos/partials/_navigation.html" %}
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Obrigado</h1>
+                </div>
+            </div>
+        </header>
+        <style>
+            .form-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 70vh;
+                margin-top: -5%;
+                margin-bottom: -3%;
+            }
+    
+            form {
+                max-width: 400px;
+            }
+        </style>
+        <section class="py-5 form-container">
+            <h1>Obrigado pelo seu contato</h1>
+            <br>
+            <p>Aguarde pelo nosso retorno em breve para a solução de suas dúvidas, reclamações ou sugestões</p>
+            <p>Esse canal estará sempre aberto para nossos clientes</p>
+            <button type="button" onclick="window.location.href= {% url "index" %}">Voltar para Página Inicial</button>
+        </section>
+        <!-- Footer-->
+        {% include "acervos/partials/_footer.html" %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    {% include "acervos/partials/_head.html" %}
+
+<body>
+    <!-- Navigation-->
+    {% include "acervos/partials/_navigation.html" %}
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Fale Conosco</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Dúvidas, Reclamações ou Sugestões são sempre bem vindas</p>
+            </div>
+        </div>
+    </header>
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 75vh;
+            margin-top: -5%;
+            margin-bottom: -5%;
+        }
+
+        form {
+            max-width: 400px;
+        }
+    </style>
+    <section class="py-5 form-container">
+        <form action="https://api.staticforms.xyz/submit" method="post">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Digite o seu nome" autocomplete="off" style="width: 116%;" required>
+            </div>
+            <div class="form-group">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite o seu email" autocomplete="off" style="width: 116%;" required>
+            </div>
+            <div class="form-group">
+                <br>
+                <label for="message">Mensagem</label>
+                <br>
+                <textarea id="message" name="message" cols="60" rows="10" placeholder="Digite a sua mensagem" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+
+            <input type="hidden" name="accessKey" value="96548b11-abfc-448a-967f-632134a4ac25">
+            <input type="hidden" name="redirectTo" value="{% url "ObrigadoContato" %}">
+        </form>
+    </section>
+    <!-- Footer-->
+    {% include "acervos/partials/_footer.html" %}
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

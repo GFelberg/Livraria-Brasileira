@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    {% include "acervos/partials/_head.html" %}
+
+    <body>
+        <!-- Navigation-->
+        {% include "acervos/partials/_navigation.html" %}
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Login</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Realize seu login para adquirir o seu livro dos sonhos</p>
+                </div>
+            </div>
+        </header>
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            form {
+                max-width: 400px;
+            }
+        
+            .form-group {
+                margin-bottom: 20px;
+            }
+        
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: white;
+            }
+        
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+        
+            .form-row {
+                display: flex;
+                justify-content: space-between;
+            }
+        
+            button {
+                background-color: white;
+                color: black;
+                padding: 10px;
+                cursor: pointer;
+            }
+        
+            button:hover {
+                background-color: black;
+                color: white;
+                opacity: 1;
+            }
+        </style>
+        <!-- Section-->
+        <main>
+            <form action="{% url 'Login' %}" method="POST">
+                {% csrf_token %}
+                <section class="py-5">
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="email">Email</label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Email"
+                                   autocomplete="off"
+                                   style="width: 200px"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="password">Senha</label>
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   placeholder="Senha"
+                                   autocomplete="new-password"
+                                   style="width: 200px"
+                                   required>
+                        </div>
+                    </div>
+                    <button onClick = "usuarios.views.login()" type="submit">Logar</button>
+                </section>
+            </form>
+        </main>
+        <!-- Footer-->
+        {% include "acervos/partials/_footer.html" %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,244 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    {% include "acervos/partials/_head.html" %}
+
+<body>
+    <!-- Navigation-->
+    {% include "acervos/partials/_navigation.html" %}
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Livros Infantis</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Encontre o seu próximo livro conosco</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Promoção badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção</div>
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - O Pequeno Príncipe.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">O Pequeno Príncipe</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted text-decoration-line-through">R$30.00</span>
+                                <p class="card-text text-dark mb-1">R$12.00</p>
+                            </div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Promoção badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção</div>
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - A Galinha Pintadinha - O Som dos Animais.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">A Galinha Pintadinha - O Som dos Animais</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted text-decoration-line-through">R$10.00</span>
+                                <p class="card-text text-dark mb-1">R$5.20</p>
+                            </div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - Alice no País das Maravilhas.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">Alice no País das Maravilhas</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <p class="card-text text-dark">R$23.00</p>
+                            <li>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Promoção badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção</div>
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - Matilda.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">Matilda</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted text-decoration-line-through">R$50.00</span>
+                                <p class="card-text text-dark mb-1">R$30.00</p>
+                            </div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - Peter Pan.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">Peter Pan</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <p class="card-text text-dark">R$24.00</p>
+                            <li>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Promoção badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção</div>
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - O Patinho Feio.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">O Patinho Feio</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted text-decoration-line-through">R$8.00</span>
+                                <p class="card-text text-dark mb-1">R$4.00</p>
+                            </div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Promoção badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção</div>
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - Onde Vivem os Monstros.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">Onde Vivem os Monstros</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted text-decoration-line-through">R$64.00</span>
+                                <p class="card-text text-dark mb-1">R$48.00</p>
+                            </div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img src="{% static "assets/Infanil/Livro - Uma Lagarta Muito Comilona.jpg" %}" class="card-img-top" alt="..." height="400px">
+                        <div class="card-body">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder text-dark">Uma Lagarta Muito Comilona</h5>
+                            <li>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <!-- Product price-->
+                            <li>
+                            <p class="card-text text-dark">R$45.00</p>
+                            <li>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% static "Carrinho" %}">Adicionar ao Carrinho</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    {% include "acervos/partials/_footer.html" %}
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
