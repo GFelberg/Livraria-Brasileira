@@ -2,43 +2,80 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="{% url 'index' %}">Livraria Brasileira</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url "index" %}">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url "SobreNos" %}" style="color: black;">Sobre nós</a></li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url "index" %}">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "SobreNos" %}" style="color: black;">Sobre nós</a>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Nosso Acervo Literário</a>
+                    <a class="nav-link dropdown-toggle"
+                       id="navbarDropdown"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false"
+                       style="color: black">Nosso Acervo Literário</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <!--<li><hr class="dropdown-divider" /></li>-->
-                        <li><a class="dropdown-item" href="{% url "DesenvolvimentoPessoal" %}">Desenvolvimento Pessoal</a></li>
-                        <li><a class="dropdown-item" href="{% url "Educacao" %}">Educação</a></li>
-                        <li><a class="dropdown-item" href="{% url "Ficcao" %}">Ficção</a></li>
-                        <li><a class="dropdown-item" href="{% url "Infantil" %}">Infantil</a></li>
-                        <li><a class="dropdown-item" href="{% url "Informatica" %}">Informática</a></li>
-                        <li><a class="dropdown-item" href="{% url "Mangas" %}">Mangás</a></li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "DesenvolvimentoPessoal" %}">Desenvolvimento Pessoal</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "Educacao" %}">Educação</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "Ficcao" %}">Ficção</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "Infantil" %}">Infantil</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "Informatica" %}">Informática</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url "Mangas" %}">Mangás</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{% url "FaleConosco" %}" style="color: black;">Fale Conosco</a>
-            </ul>
-            <style>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "FaleConosco" %}" style="color: black;">Fale Conosco</a>
+                </ul>
+                <style>
                 /* Adicione este bloco de estilo ao seu código */
                 .btn-outline-light:hover img {
                     filter: brightness(0) invert(1);
                 }
-            </style>
-            <form class="d-flex">
-                <a class="btn btn-outline-dark mx-4 btn-outline-light" href="{% url "Login" %}">
-                    <img src="{% static "assets/Usuário/User.png" %}" height="40px" alt="Minha Conta">
-                </a>
-            </form>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" href="{% url "Carrinho" %}" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Carrinho
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
+                </style>
+                <form class="d-flex">
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-outline-dark mx-4 btn-outline-light" href="{% url 'MinhaConta' %}">
+                            <img src="{% static 'assets/Usuário/User.png' %}" height="40px" alt="Minha Conta">
+                        </a>
+                    {% else %}
+                        <a class="btn btn-outline-dark mx-4 btn-outline-light" href="{% url 'Login' %}">
+                            <img src="{% static 'assets/Usuário/User.png' %}" height="40px" alt="Login">
+                        </a>
+                    {% endif %}
+                </form>
+                <form class="d-flex">
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'Carrinho' %}">Carrinho</a>
+                    {% else %}
+                        <a class="btn btn-outline-dark mx-4 btn-outline-light" href="{% url 'Login' %}"></a>
+                    {% endif %}
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>

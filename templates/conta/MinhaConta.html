@@ -1,11 +1,8 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
     {% include "acervos/partials/_head.html" %}
     <body>
-
         <!-- Navigation-->
         {% include "acervos/partials/_navigation.html" %}
         <!-- Header-->
@@ -13,8 +10,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Informações da Conta</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Atualize ou verifique suas informações sempre que houver necessidade
-                    </p>
+                    <p class="lead fw-normal text-white-50 mb-0">Atualize ou verifique suas informações sempre que houver necessidade</p>
                 </div>
             </div>
         </header>
@@ -70,50 +66,9 @@
         </style>
         <section class="py-5 form-container">
             <form>
-                <div class="form-row">
-                    <div class="form-group" style="flex: 1;">
-                        <label style="color: white" for="name">Nome</label>
-                        <input type="text"
-                               id="name"
-                               name="name"
-                               placeholder="Nome"
-                               autocomplete="off"
-                               style="width: 200px"
-                               required>
-                    </div>
-                    <div class="form-group" style="margin-left: 30px; flex: 1;">
-                        <label style="color: white" for="email">Email</label>
-                        <input type="email"
-                               id="email"
-                               name="email"
-                               placeholder="Email"
-                               autocomplete="off"
-                               style="width: 200px"
-                               required>
-                    </div>
+                <div class="text-center">
+                    <a class="btn btn-dark mt-auto" href="{% url "index" %}">Logout</a>
                 </div>
-                <div class="form-row">
-                    <div class="form-group" style="flex: 1;">
-                        <label style="color: white" for="password">Senha</label>
-                        <input type="password"
-                               id="password"
-                               name="password"
-                               placeholder="Senha"
-                               autocomplete="new-password"
-                               style="width: 200px"
-                               required>
-                    </div>
-                    <div class="form-group" style="margin-left: 30px; flex: 1;">
-                        <label style="color: white" for="confirm-password">Confirmar Senha</label>
-                        <input type="password"
-                               id="confirm-password"
-                               name="confirm-password"
-                               placeholder="Confirmar Senha"
-                               autocomplete="new-password"
-                               style="width: 200px">
-                    </div>
-                </div>
-                <button type="submit">Atualizar</button>
             </form>
         </section>
         <!-- Footer-->

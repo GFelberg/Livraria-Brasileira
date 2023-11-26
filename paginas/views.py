@@ -1,13 +1,9 @@
 # Create your views here.
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-from django.contrib import messages
+from django.shortcuts import render
 
 # Create your views here.
 def index_view(request, *args, **kwargs):
     return render(request, "index.html", {})
-
 
 def sobrenos_view(request,*args, **kwargs):
     return render(request, "iniciais/SobreNos.html", {})
@@ -18,23 +14,11 @@ def faleconosco_view(request,*args, **kwargs):
 def obrigadocontato_view(request,*args, **kwargs):
     return render(request, "iniciais/ObrigadoContato.html", {})
 
+def carrinho_view(request):
+    return render(request, "Carrinho.html")
 
-def cadastro_view(request):
-    return render(request, 'conta/Cadastro.html', {})
-
-def login_view(request):
-    return render(request, 'conta/Login.html', {})
-
-def minhaconta_view(request,*args, **kwargs):
-    return render(request, "conta/MinhaConta.html", {})
-
-
-def carrinho_view(request,*args, **kwargs):
-    return render(request, "Carrinho.html", {})
-
-def paginalivro_view(request,*args, **kwargs):
-    return render(request, "PaginaLivro.html", {})
-
+def paginalivro_view(request):
+    return render(request, "PaginaLivro.html")
 
 def desenvolvimento_pessoal_view(request, *args, **kwargs):
     return render(request, "acervos/DesenvolvimentoPessoal.html")

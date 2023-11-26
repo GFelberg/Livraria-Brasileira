@@ -1,65 +1,48 @@
 from django.shortcuts import render, redirect
-
-from usuarios.forms import LoginForms, CadastroForms
-
+from django.http import HttpResponse
 from django.contrib.auth.models import User
-
-from django.contrib import auth
-
-from django.contrib import messages
-
-def login(request):
-    form = LoginForms()
-
-    if request.method == 'POST':
-        form = LoginForms(request.POST)
-
-        if form.is_valid():
-            nome = form['nome_login'].value()
-            senha = form['senha'].value()
-
-        usuario = auth.authenticate(
-            request,
-            username=nome,
-            password=senha
-        )
-        if usuario is not None:
-            auth.login(request, usuario)
-            messages.success(request, f'{nome} logado com sucesso!')
-            return redirect('index')
-        else:
-            messages.error(request, 'Erro ao efetuar login')
-            return redirect('Login')
-
-    return render(request, 'conta/Login.html', {'form': form})
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as login_django
+from django.contrib.auth import logout as logout_django
+from django.contrib.auth.decorators import login_required
 
 def cadastro(request):
-    form = CadastroForms()
+    if request.method == "GET":
+        return render(request, 'Cadastro.html')
+    else:
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+    
+        user = User.objects.filter(username=username).first()
 
-    if request.method == 'POST':
-        form = CadastroForms(request.POST)
+        if user:
+             return HttpResponse('Esse usuário já existe no sistema')
+        
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        
+        return HttpResponse('Usuário cadastrado com sucesso')
 
-        if form.is_valid():
-            nome=form['nome_cadastro'].value()
-            email=form['email'].value()
-            senha=form['senha_1'].value()
+def login(request):
+    if request.method == "GET":
+        return render(request, 'Login.html')
+    else:
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-            if User.objects.filter(username=nome).exists():
-                messages.error(request, 'Usuário já existente')
-                return redirect('Cadastro')
+        user = authenticate(username=username, password=password)
 
-            usuario = User.objects.create_user(
-                username=nome,
-                email=email,
-                password=senha
-            )
-            usuario.save()
-            messages.success(request, 'Cadastro efetuado com sucesso!')
-            return redirect('index')
-
-    return render(request, 'conta/Cadastro.html', {'form': form})
-
+        if user:
+            login_django(request, user)
+            return redirect('MinhaConta')
+        else:
+            return redirect('Login')
+        
 def logout(request):
-    auth.logout(request)
-    messages.success(request, 'Logout efetuado com sucesso!')
+    logout_django(request)
     return redirect('index')
+        
+@login_required(login_url="/auth/login/") # O usuário não tem acesso ao MinhaConta, logo é enviado o local de Login
+def conta(request):
+    return render(request, 'conta/MinhaConta.html') # O usuário tem acesso, logo é redirecionado ao MinhaConta
