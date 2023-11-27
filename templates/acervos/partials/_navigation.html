@@ -73,7 +73,7 @@
                     {% if user.is_authenticated %}
                         <a class="btn btn-outline-dark mt-auto" href="{% url 'Carrinho' %}">Carrinho</a>
                     {% else %}
-                        <a class="btn btn-outline-dark mx-4 btn-outline-light" href="{% url 'Login' %}"></a>
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'Login' %}">Carrinho</a>
                     {% endif %}
                 </form>
             </div>

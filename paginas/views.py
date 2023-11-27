@@ -14,9 +14,6 @@ def faleconosco_view(request,*args, **kwargs):
 def obrigadocontato_view(request,*args, **kwargs):
     return render(request, "iniciais/ObrigadoContato.html", {})
 
-def carrinho_view(request):
-    return render(request, "Carrinho.html")
-
 def paginalivro_view(request):
     return render(request, "PaginaLivro.html")
 

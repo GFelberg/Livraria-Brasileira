@@ -9,7 +9,7 @@
             <main>
                 <div class="container">
                     <div class="table-responsive text-nowrap">
-                        <h2>Carrinho</h2>
+                        <br>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -21,53 +21,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for order_item in object.items.all %}
-                                    <tr>
-                                        <th scope="row">{{ forloop.counter }}</th>
-                                        <td>{{ order_item.item.titulo }}</td>
-                                        <td>{{ order_item.item.preco }}</td>
-                                        <td>
-                                            <a href="{% url 'produtos:remove-single-item-from-cart' order_item.item.slug %}"><i class="fas fa-minus mr-2"></i></a>
-                                            {{ order_item.quantity }}
-                                            <a href="{% url 'produtos:add-to-cart' order_item.item.slug %}"><i class="fas fa-plus ml-2"></i></a>
-                                        </td>
-                                        <td>
-                                            ${{ order_item.get_total_item_price }}
-                                            <a style='color: red'
-                                               href="{% url 'produtos:remove-from-cart' order_item.item.slug %}">
-                                                <i class="fas fa-trash float-right"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                {% empty %}
-                                    <tr>
-                                        <td colspan='5'>O seu carrinho está vazio</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <a class='btn btn-primary float-right' href="{% url "index" %}">Continuar Comprando</a>
-                                        </td>
-                                    </tr>
+                                {% for item in items %}
+                                    <div class="item">
+                                        <div class="iteminfo">
+                                            <div class="p_img">
+                                                <img src="{{ item.product.picture.url }}" alt="" />
+                                            </div>
+                                            <p>{{ item.product.name }}</p>
+                                        </div>
+                                        <div class="name">
+                                            <p>{{ item.quantity }}</p>
+                                        </div>
+                                        <div class="name">
+                                            <p>${{ item.product.price }}</p>
+                                        </div>
+                                        <div class="name">
+                                            <p>${{ item.price }}</p>
+                                        </div>
+                                    </div>
                                 {% endfor %}
-                                {% if object.get_total %}
-                                    <tr>
-                                        <td colspan="4">
-                                            <b>Order Total</b>
-                                        </td>
-                                        <td>
-                                            <b>${{ object.get_total }}</b>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <li>
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url "index" %}">Continuar Comprando</a></div>
-                                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url "ObrigadoContato" %}">Finalizar Compra</a></div>
-                                                </div>
-                                        </td>
-                                    </tr>
-                                {% endif %}
                             </tbody>
                         </table>
                     </div>

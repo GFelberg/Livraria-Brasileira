@@ -1,7 +1,7 @@
 from django.urls import path
 from paginas.views import index_view 
 from paginas.views import sobrenos_view, faleconosco_view, obrigadocontato_view
-from paginas.views import carrinho_view, paginalivro_view
+from paginas.views import paginalivro_view
 from paginas.views import desenvolvimento_pessoal_view, educacao_view, ficcao_view, infantil_view, informatica_view, mangas_view
 
 urlpatterns = [
@@ -12,7 +12,6 @@ urlpatterns = [
 
 
     path("livro/", paginalivro_view, name='PaginaLivro'),
-    path('carrinho/', carrinho_view, name='Carrinho'),
 
     path('desenvolvimentopessoal/', desenvolvimento_pessoal_view, name='DesenvolvimentoPessoal'),
     path('educacao/', educacao_view, name='Educacao'),

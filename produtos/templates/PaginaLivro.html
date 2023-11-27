@@ -18,9 +18,7 @@
                     <div class="row wow fadeIn">
                         <!--Grid column-->
                         <div class="col-md-5 mb-4 text-center">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg"
-                                 class="img-fluid"
-                                 alt="">
+                            <img src="{% static "assets/Mangás/Livro - Chainsaw Man.jpg" %}" alt="..." height="400px">
                         </div>
                         <div class="col-md-6 mb-4">
                             <!--Content-->
@@ -43,12 +41,13 @@
                                         <p class="text-white">{{ object.descricao }}</p>
                                     </li>
                                 </ul>
-                            </div>                            
-                        </main>
-                    {% endblock content %}
-                    <!-- Footer-->
-                    {% include "acervos/partials/_footer.html" %}
-                    <!-- Bootstrap core JS-->
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-                </body>
-            </html>
+                            </div>
+                        </div>
+                    </main>
+                {% endblock content %}
+                <!-- Footer-->
+                {% include "acervos/partials/_footer.html" %}
+                <!-- Bootstrap core JS-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+        </html>
