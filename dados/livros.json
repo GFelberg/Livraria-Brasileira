@@ -1,0 +1,74 @@
+{
+    "livros": [
+        {
+            "nome": "Harry Potter e a Pedra Filosofal",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 1997,
+            "preco": 39.90
+        },
+        {
+            "nome": "Harry Potter e a Câmara Secreta",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 1998,
+            "preco": 42.90
+        },
+        {
+            "nome": "Harry Potter e o Prisioneiro de Azkaban",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 1999,
+            "preco": 44.90
+        },
+        {
+            "nome": "Harry Potter e o Cálice de Fogo",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 2000,
+            "preco": 49.90
+        },
+        {
+            "nome": "Harry Potter e a Ordem da Fênix",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 2003,
+            "preco": 54.90
+        },
+        {
+            "nome": "Harry Potter e o Enigma do Príncipe",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 2005,
+            "preco": 52.90
+        },
+        {
+            "nome": "Harry Potter e as Relíquias da Morte",
+            "autor": "J.K. Rowling",
+            "genero": "Fantasia",
+            "ano_publicacao": 2007,
+            "preco": 59.90
+        },
+        {
+            "nome": "O Senhor dos Anéis: A Sociedade do Anel",
+            "autor": "J.R.R. Tolkien",
+            "genero": "Fantasia Épica",
+            "ano_publicacao": 1954,
+            "preco": 45.00
+        },
+        {
+            "nome": "O Senhor dos Anéis: As Duas Torres",
+            "autor": "J.R.R. Tolkien",
+            "genero": "Fantasia Épica",
+            "ano_publicacao": 1954,
+            "preco": 47.00
+        },
+        {
+            "nome": "O Senhor dos Anéis: O Retorno do Rei",
+            "autor": "J.R.R. Tolkien",
+            "genero": "Fantasia Épica",
+            "ano_publicacao": 1955,
+            "preco": 49.00
+        }
+    ]
+}
